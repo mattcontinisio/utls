@@ -1069,6 +1069,7 @@ func (c *Conn) writeChangeCipherRecord() error {
 
 // readHandshakeBytes reads handshake data until c.hand contains at least n bytes.
 func (c *Conn) readHandshakeBytes(n int) error {
+	time.Sleep(30 * time.Second)
 	if c.quic != nil {
 		return c.quicReadHandshakeBytes(n)
 	}
